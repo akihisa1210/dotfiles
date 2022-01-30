@@ -12,3 +12,6 @@ for f in .??*; do
 
     ln -snfv ${PWD}/"$f" ~/
 done
+
+# create dirertory for git repo
+mkdir -p ~/repo

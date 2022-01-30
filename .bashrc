@@ -116,5 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ghq + fzf
+function ghqf() {
+  declare -r REPO="$(ghq list -p | fzf)"
+  [[ -n "${REPO}" ]] && cd ${REPO}
+  pwd
+}
+
+bind -x '"\C-g": ghqf'
+
 # starship
 eval "$(starship init bash)"

@@ -14,4 +14,4 @@ for f in .??*; do
 done
 
 # create dirertory for git repo
-mkdir -p ~/repo
+mkdir -p ~/repos

@@ -116,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# brew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
 # ghq + fzf
 function ghqf() {
   declare -r REPO="$(ghq list -p | fzf)"

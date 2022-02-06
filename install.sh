@@ -15,3 +15,5 @@ done
 
 # create dirertory for git repo
 mkdir -p ~/repos
+
+exec $SHELL -l

@@ -140,3 +140,7 @@ eval "$(asdf exec direnv hook bash)"
 
 # A shortcut for asdf managed direnv.
 direnv() { asdf exec direnv "$@"; }
+
+# GitHub CLI
+alias ghrv='gh repo view --web'
+alias ghpv='gh pr view --web'

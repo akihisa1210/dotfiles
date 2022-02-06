@@ -13,6 +13,9 @@ for f in .??*; do
     ln -snfv ${PWD}/"$f" ~/
 done
 
+# copy .config directory
+rsync -rv .config ~/
+
 # create dirertory for git repo
 mkdir -p ~/repos
 

@@ -144,3 +144,6 @@ direnv() { asdf exec direnv "$@"; }
 # GitHub CLI
 alias ghrv='gh repo view --web'
 alias ghpv='gh pr view --web'
+
+# git-cz
+alias git-cz='npx git-cz --disable-emoji'

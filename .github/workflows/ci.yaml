@@ -1,0 +1,14 @@
+name: Setup new machine
+
+on: push
+
+jobs:
+  deploy-dotfiles:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./settings.sh
+      - run: ./install_apt.sh
+      - run: ./download_binaries.sh
+      - run: ./install.sh
+      - run: ./install_brew.sh

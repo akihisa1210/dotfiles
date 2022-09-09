@@ -1,5 +1,6 @@
 brew "asdf"
-brew "ghq"
+brew "direnv"
 brew "fzf"
 brew "gh"
+brew "ghq"
 brew "starship"

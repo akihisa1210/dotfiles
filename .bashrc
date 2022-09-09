@@ -135,8 +135,8 @@ bind -x '"\C-g": ghqf'
 # starship
 eval "$(starship init bash)"
 
-# Hook direnv into your shell.
-eval "$(asdf exec direnv hook bash)"
+# direnv
+eval "$(direnv hook bash)"
 
 # A shortcut for asdf managed direnv.
 direnv() { asdf exec direnv "$@"; }

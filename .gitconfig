@@ -1,7 +1,7 @@
 [user]
-  name = akihisa1210
-  email = akihisa-koyama@cybozu.co.jp
+	name = akihisa1210
+	email = akihisa-koyama@cybozu.co.jp
 [ghq]
-  root = ~/repos
+	root = ~/repos
 [credential]
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe

@@ -144,3 +144,18 @@ alias ghpv='gh pr view --web'
 
 # git-cz
 alias git-cz='npx git-cz --disable-emoji'
+
+# Forwarding SSH agent request from WSL2 to Windows
+export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
+ALREADY_RUNNING=$(pgrep -f "npiperelay.exe.*//./pipe/openssh-ssh-agent" > /dev/null 2>&1; echo $?)
+# If npiperelay is NOT running, remove socket file and run npiperelay.
+if [[ $ALREADY_RUNNING != 0 ]]; then
+    if [[ -S $SSH_AUTH_SOCK ]]; then
+        echo "removing previous socket..."
+        rm $SSH_AUTH_SOCK
+    fi
+    echo "Starting SSH-Agent relay..."
+    (setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"$(wslpath "$(wslvar USERPROFILE)")/tools/npiperelay/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &) >/dev/null 2>&1
+else
+  echo "SSH-Agent relay is already running."
+fi
